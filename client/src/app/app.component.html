@@ -1,0 +1,15 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div>
+  <h1>
+   {{title}}
+  </h1>
+  <h3>Name: {{ movieObj.title }} </h3>
+  <h3>Url: {{ movieObj.url }} </h3>
+  <input type="hidden" [(ngModel)]="movieId" >
+  <br/>
+  <h3>Select a movie from list</h3>
+  <select [(ngModel)]="movieId" style="background:red;color=black;">
+    <option *ngFor = "let movie of moviesList" value="{{movie._id}}">{{movie.title}}</option>
+  </select>
+  <button (click)="getMovieInfo()" style="background:blue;color=yellow">Get Movie Details</button>
+</div>
